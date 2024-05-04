@@ -9,9 +9,10 @@ radius = 22.0907
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
-modulate = Color(0.713726, 0.870588, 0.894118, 1)
-position = Vector2(2, 4.76837e-07)
-scale = Vector2(0.769231, 0.769231)
+modulate = Color(0, 0.0313726, 0, 0.219608)
+self_modulate = Color(0.89059, 0.89059, 0.89059, 1)
+position = Vector2(2, 1.14286)
+scale = Vector2(0.857143, 0.813187)
 texture = ExtResource("1_lbaqs")
 
 [node name="PineTree" type="Sprite2D" parent="."]
