@@ -1,3 +1,5 @@
 res://player.tscn
 res://vampire_survivor.tscn
 res://mob.tscn
+res://gun.tscn
+res://gun.gd
