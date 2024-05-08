@@ -6,3 +6,4 @@ res://mob.tscn
 res://bullet.tscn
 res://gun.gd
 res://mob.gd
+res://player.gd
