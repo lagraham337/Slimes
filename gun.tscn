@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx761sx1dniy3"]
+[gd_scene load_steps=5 format=3 uid="uid://cx761sx1dniy3"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_65cad"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_gt7wj"]
+[ext_resource type="PackedScene" uid="uid://cqjli0hqlhhj5" path="res://bullet.tscn" id="3_lesaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bscf0"]
 radius = 656.0
@@ -22,4 +23,13 @@ position = Vector2(89, -11)
 texture = ExtResource("1_gt7wj")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
 position = Vector2(26, -11)
+
+[node name="Bullet" parent="WeaponPivot/Pistol/ShootingPoint" instance=ExtResource("3_lesaf")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
