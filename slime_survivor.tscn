@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbodxd28wglrw"]
+
+[ext_resource type="Texture2D" uid="uid://4a1ohshmoccx" path="res://background/grass2.png" id="1_uvcih"]
+[ext_resource type="Script" path="res://slime_survivor.gd" id="1_xsgwp"]
+[ext_resource type="PackedScene" uid="uid://fth1qfyd0lyc" path="res://player.tscn" id="2_sluic"]
+[ext_resource type="PackedScene" uid="uid://ch448kd6026rs" path="res://pine_tree.tscn" id="4_lqi50"]
+
+[sub_resource type="Curve2D" id="Curve2D_6ayp2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -289.166, -299.069, 0, 0, 0, 0, 2232.82, -287.358, 0, 0, 0, 0, 2228.85, 1404.39, 0, 0, 0, 0, -317, 1388, 0, 0, 0, 0, -315.012, -278.841)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_xsgwp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1938.0
+offset_bottom = 1101.0
+color = Color(0.808824, 0.968792, 0.60462, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1927.0
+offset_bottom = 1078.0
+texture = ExtResource("1_uvcih")
+
+[node name="Player" parent="." instance=ExtResource("2_sluic")]
+position = Vector2(951, 692)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-949.113, -607.094)
+scale = Vector2(1.00595, 0.939266)
+curve = SubResource("Curve2D_6ayp2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-289.166, -299.069)
+rotation = 0.00464365
+
+[node name="PineTree" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(493, 331)
+
+[node name="PineTree2" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(769, 937)
+
+[node name="PineTree3" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(1798, 311)
+
+[node name="PineTree4" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(1711, 385)
+
+[node name="PineTree5" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(1838, 447)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(351, 504)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(306, 723)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(244, 141)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(584, 428)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(74, 477)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(55, 1040)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(142, 1074)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("4_lqi50")]
+position = Vector2(1430, 587)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

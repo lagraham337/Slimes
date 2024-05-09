@@ -1,9 +1,8 @@
 res://vampire_survivor.tscn
-res://bullet.gd
+res://player.gd
 res://gun.tscn
 res://player.tscn
 res://mob.tscn
 res://bullet.tscn
-res://gun.gd
-res://mob.gd
-res://player.gd
+res://slime_survivor.tscn
+res://slime_survivor.gd
